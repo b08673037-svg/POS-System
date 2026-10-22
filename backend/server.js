@@ -24,7 +24,13 @@ verifyEmailConfiguration();
 
 const app = express();
 
-app.use(cors());
+// Vercel par frontend aur backend alag domains par nahi, ek hi par hain.
+// Isliye hum CORS ko allow kar rahe hain. 
+app.use(cors({
+  origin: "*", // Production mein isko apne Vercel URL se replace kar sakte hain
+  credentials: true
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -44,7 +50,7 @@ app.get("/api/health", (req, res) => {
 // ---------- Auth (public + protected mix — see authRoutes.js) ----------
 app.use("/api/auth", authRoutes);
 
-// ---------- Everything else (all still open for now) ----------
+// ---------- Everything else ----------
 app.use("/api/categories", categoryRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/customers", customerRoutes);
@@ -58,9 +64,6 @@ app.use("/api/notifications", notificationRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => {
-  console.log(`🚀 Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
-  console.log(`🔗 http://localhost:${PORT}/api/health`);
-});
+// Vercel Serverless Function ke liye app ko export karna zaroori hai.
+// Vercel automatically isko handle karega, humein app.listen() ki zaroorat nahi hai.
+export default app;
