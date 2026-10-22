@@ -1,0 +1,133 @@
+/* =========================================================
+ *  Suppliers Page Specific Styling (Neo-Brutalist)
+ * ========================================================= */
+
+/* ---------- Supplier Cell (Avatar + Name + Contact) ---------- */
+.cell-person {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.cell-person-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.cell-primary {
+  font-weight: 700;
+  color: var(--text);
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cell-secondary {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+/* ---------- Supplier Avatars (Building Icon) ---------- */
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px; /* Slightly rounded square for companies/suppliers */
+  font-weight: 800;
+  font-size: 14px;
+  color: #ffffff;
+  flex-shrink: 0;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Force SVG to be perfectly centered and sized */
+.avatar svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.2;
+  stroke: currentColor;
+  fill: none;
+}
+
+/* Supplier Avatar Colors (Subtle dark/slate tones for businesses) */
+.avatar-0 { background: #09090b; } /* Stark Black */
+.avatar-1 { background: #27272a; } /* Zinc 800 */
+.avatar-2 { background: #3f3f46; } /* Zinc 700 */
+.avatar-3 { background: #52525b; } /* Zinc 600 */
+.avatar-4 { background: #1e3a8a; } /* Deep Blue */
+.avatar-5 { background: #064e3b; } /* Deep Green */
+.avatar-6 { background: #78350f; } /* Deep Amber */
+.avatar-7 { background: #4c1d95; } /* Deep Purple */
+
+/* ---------- Copyable Fields (Phone / Email) ---------- */
+.copyable {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 4px 8px;
+  margin: -4px -8px;
+  transition: all 0.2s ease;
+  color: var(--text);
+  background: transparent;
+  border: none;
+  font: inherit;
+  font-weight: 500;
+  font-size: 13.5px;
+}
+
+.copyable:hover {
+  background: var(--bg-soft);
+  color: var(--primary);
+}
+
+.copyable .copy-icon {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  flex-shrink: 0;
+  color: var(--primary);
+}
+
+.copyable:hover .copy-icon {
+  opacity: 1;
+}
+
+/* ---------- Empty Cell (For blank addresses/phones) ---------- */
+.empty-cell {
+  color: var(--text-dim);
+  font-size: 13px;
+}
+
+/* ---------- Row Actions (Edit / Delete Buttons) ---------- */
+.row-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.row-actions .btn {
+  padding: 8px 14px;
+  font-size: 12.5px;
+  border-radius: 99px !important; /* Pill shape */
+}
+
+/* Address truncation utility */
+.truncate-addr {
+  display: inline-block;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+}

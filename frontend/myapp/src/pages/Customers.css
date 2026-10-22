@@ -1,0 +1,132 @@
+/* =========================================================
+ *  Customers Page Specific Styling
+ * ========================================================= */
+
+/* ---------- Customer Cell (Avatar + Name + Notes) ---------- */
+.cell-person {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.cell-person-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.cell-primary {
+  font-weight: 700;
+  color: var(--text);
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cell-secondary {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+/* ---------- Avatars (High Contrast Neo-Brutalist) ---------- */
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-weight: 800;
+  font-size: 14px;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.avatar svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.2;
+}
+
+/* Avatar Color Variations - Sleek & Professional */
+.avatar-0 { background: #09090b; } /* Black */
+.avatar-1 { background: #3f3f46; } /* Dark Gray */
+.avatar-2 { background: #71717a; } /* Gray */
+.avatar-3 { background: #2563eb; } /* Blue */
+.avatar-4 { background: #16a34a; } /* Green */
+.avatar-5 { background: #d97706; } /* Amber */
+.avatar-6 { background: #db2777; } /* Pink */
+.avatar-7 { background: #9333ea; } /* Purple */
+
+/* ---------- Copyable Fields (Phone / Email) ---------- */
+.copyable {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 4px 8px;
+  margin: -4px -8px;
+  transition: all 0.2s ease;
+  color: var(--text);
+  background: transparent;
+  border: none;
+  font: inherit;
+  font-weight: 500;
+  font-size: 13.5px;
+}
+
+.copyable:hover {
+  background: var(--bg-soft);
+  color: var(--primary);
+}
+
+.copyable .copy-icon {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  flex-shrink: 0;
+  color: var(--primary);
+}
+
+.copyable:hover .copy-icon {
+  opacity: 1;
+}
+
+/* ---------- Empty Cell (For blank emails/addresses) ---------- */
+.empty-cell {
+  color: var(--text-dim);
+  font-size: 13px;
+}
+
+/* ---------- Row Actions (Edit / Delete) ---------- */
+.row-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.row-actions .btn {
+  padding: 8px 14px;
+  font-size: 12.5px;
+  border-radius: 99px !important; /* Pill shape for actions */
+}
+
+/* Address truncation utility */
+.truncate-addr {
+  display: inline-block;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+}

@@ -1,0 +1,344 @@
+/* =========================================================
+ *  Products Page Styling (Neo-Brutalist)
+ * ========================================================= */
+
+/* ---------- Page Header ---------- */
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.page-title {
+  font-size: 26px;
+  font-weight: 800;
+  margin: 0;
+  color: var(--text);
+  letter-spacing: -0.03em;
+}
+
+.page-subtitle {
+  color: var(--text-muted);
+  margin: 4px 0 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--primary) !important;
+  color: #fff !important;
+  border-radius: 99px !important; /* Pill shape for primary */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.btn-primary:hover:not(:disabled) {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: #fff;
+  color: var(--text);
+  border-color: var(--border);
+  border-radius: 99px !important;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--bg-soft);
+  border-color: var(--border-strong);
+}
+
+.btn-danger {
+  background: #fef2f2;
+  color: var(--danger);
+  border-color: #fecaca;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: var(--danger);
+  color: #fff;
+  border-color: var(--danger);
+}
+
+/* Compact buttons for the table */
+.row-actions .btn {
+  padding: 6px 12px;
+  font-size: 12.5px;
+}
+
+/* ---------- Table & Layout ---------- */
+.table-wrap {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+  padding: 16px 20px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--border);
+}
+
+.table td {
+  padding: 16px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+.table tbody tr {
+  transition: background 0.2s;
+}
+
+.table tbody tr:hover {
+  background: var(--bg-soft);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ---------- Badges ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.badge-success {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.badge-warning {
+  background: #fffbeb;
+  color: #b45309;
+}
+
+.badge-danger {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.badge-neutral {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* ---------- Pagination ---------- */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.pagination-info {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* ---------- Modals & Forms ---------- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 100;
+}
+
+.modal {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.modal-lg {
+  max-width: 800px; /* Wider for product forms */
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.modal-close {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: var(--text);
+}
+
+.modal-body {
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  background: var(--bg-soft);
+}
+
+/* Form Grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 20px;
+}
+
+.form-grid .field-full {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 640px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Fields */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.required {
+  color: var(--danger);
+}
+
+.field-error {
+  color: var(--danger);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.field-hint {
+  color: var(--text-muted);
+  font-size: 12px;
+  text-align: right;
+}
+
+.input-error {
+  border-color: var(--danger) !important;
+}
+
+.input-error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
+}
+
+textarea.input {
+  resize: vertical;
+  min-height: 80px;
+  font-family: inherit;
+}
+
+/* Read-only input (for stock in edit mode) */
+.input[readonly], .input:disabled {
+  background: var(--bg-soft);
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+/* Empty state */
+.table-empty {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 48px 20px !important;
+  font-size: 14px;
+}
+.input {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+.input:focus { border-color: #000; box-shadow: 0 0 0 3px rgba(0,0,0,0.05); }
